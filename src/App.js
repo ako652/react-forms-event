@@ -1,4 +1,5 @@
-import logo from "./logo.svg";
+import { useState } from "react";
+import ProductItem from './components/product/ProductItem'
 import "./App.css";
 
 const productList = [
@@ -110,9 +111,55 @@ const productList = [
   },
 ];
 function App() {
+const [values, setvalues] = useState('')
+const [filters,setfilters]=useState(productList)
+
+function inputtext(event){
+   setvalues(event.target.value.toLocaleLowerCase())
+
+ 
+
+}
+  
+const handleFormSubmit = event => {
+  event.preventDefault();
+  const filters = productList.filter(element => element.title.toLocaleLowerCase().includes(values))
+  setfilters(filters)
+};
+
   return (
+
+   
     <div className="App">
+      <div style={{backgroundColor:'brown' , width:'50%'}}>
       <h1> React hook assignment </h1>
+      <form  onSubmit= {handleFormSubmit}>
+        <label>
+          search : <input type="text" 
+          onChange={inputtext}
+          value={values}
+          
+          ></input>
+          <button type="submit"> enter</button>
+        </label>
+
+      </form>
+
+    
+       <div style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr'}}>
+        {filters.map((element)=>{
+          return <div key={element.id}>
+            <p>{element.title}</p>
+            <p>{element.price}</p>
+            <img  src={element.image} alt={element.title} width='200px'/>
+          </div>
+        })}
+       </div>
+       </div>
+       <div style={{width:'50%'}}>
+       <h1>second method</h1>
+      <ProductItem items={productList}/>
+      </div>
     </div>
   );
 }
