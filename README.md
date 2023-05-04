@@ -9,18 +9,19 @@
 
 1. Form
    get data from a from use `onChange`
+
 2. Search
 
 - get user input from a form in `UserInput` component
 - display data in `ProductList` then product detail in `ProductItem`
 - search product base on what user typing ans show result on the screen
 
-3. Hints
+## Hints
 
 - The second assignment: ALL THE DATA SHOULD BE IN APP
 - Logic to search data also in app
 
-4. Screenshot
+## Screenshot
 
 ![](./screenshots/products.png)
 
