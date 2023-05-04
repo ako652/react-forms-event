@@ -19,3 +19,9 @@
 
 - The second assignment: ALL THE DATA SHOULD BE IN APP
 - Logic to search data also in app
+
+4. Screenshot
+
+![](./screenshots/products.png)
+
+![](./screenshots/searchResult.png)
